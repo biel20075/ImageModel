@@ -1,20 +1,32 @@
-def c(l):
-    t=0
-    for i in range(len(l)):
-        t=t+l[i]
-    m=t/len(l)
-    mx=l[0]
-    mn=l[0]
-    for i in range(len(l)):
-        if l[i]>mx:
-            mx=l[i]
-        if l[i]<mn:
-            mn=l[i]
-    return t,m,mx,mn
+def calculate_list_statistics(numbers):
+    """Calculate the total, average, maximum, and minimum values of a list.
 
-x=[23,7,45,2,67,12,89,34,56,11]
-a,b,c2,d=c(x)
-print("total:",a)
-print("media:",b)
-print("maior:",c2)
-print("menor:",d)
+    Args:
+        numbers (list[float] | list[int]): A non-empty list of numbers.
+
+    Returns:
+        tuple: (total, average, maximum, minimum)
+    """
+    if not numbers:
+        raise ValueError("A lista não pode ser vazia.")
+
+    total = sum(numbers)
+    average = total / len(numbers)
+    maximum = max(numbers)
+    minimum = min(numbers)
+
+    return total, average, maximum, minimum
+
+
+def main():
+    values = [23, 7, 45, 2, 67, 12, 89, 34, 56, 11]
+    total, average, maximum, minimum = calculate_list_statistics(values)
+
+    print("total:", total)
+    print("media:", average)
+    print("maior:", maximum)
+    print("menor:", minimum)
+
+
+if __name__ == "__main__":
+    main()
