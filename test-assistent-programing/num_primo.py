@@ -1,5 +1,12 @@
 def eh_primo(n: int) -> bool:
-    """Retorna True se n for primo, caso contrário False."""
+    """Verifica se um número é primo.
+
+    Args:
+        n (int): Número inteiro a ser verificado.
+
+    Returns:
+        bool: True se o número for primo, caso contrário False.
+    """
     if n < 2:
         return False
     if n in (2, 3):
